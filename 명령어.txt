@@ -1,4 +1,24 @@
 npx sequelize init 
 npx sequelize db:create
+npx sequelize db:migrate
+
+프리티어 설정
+확장에서 prettier 다운
+터미널에서 npm install -D prettier
+
+그리고 .prettierrc 라는 파일을 직접 만들고
+
+그 파일안에서 세팅 
+
+{
+  "semi": true,   
+  "singleQuote": true,
+  "tabWidth": 2
+}
+
+여기서 semi 는
+
+
+
 npx sequelize model:generate --name User --attributes userId:string,email:string,userName:string,password:string
 npx sequelize model:generate --name Profile --attributes userId:string,introMessage:string,imageUrl:string

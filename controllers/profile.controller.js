@@ -9,7 +9,7 @@ async function getAllUsers(req, res) {
   res.json({ allUsers });
 }
 
-async function getMyPage(req, res) {
+async function getPage(req, res) {
   // #swagger.tags = ['profile']
   const { userId } = req.params;
   const user = await profileService.findUser(userId);
@@ -21,9 +21,21 @@ async function getMyPage(req, res) {
   res.json({ user });
 }
 
+async function getMyPage(req, res) {
+  // #swagger.tags = ['profile']
+  const { userId } = res.locals.user;
+  const user = await profileService.findUser(userId);
+
+  if (!user) {
+    throwError(404, 'Not Found');
+  }
+
+  res.json({ user });
+}
+
 async function patchMyPage(req, res) {
   // #swagger.tags = ['profile']
-  const { userId } = req.params;
+  const { userId } = req.locals.user;
   const { introMessage } = req.body;
   const user = await profileService.findUser(userId);
 
@@ -44,4 +56,4 @@ async function patchMyPage(req, res) {
   res.json({ introMessage, imageUrl });
 }
 
-module.exports = { getAllUsers, getMyPage, patchMyPage };
+module.exports = { getAllUsers, getPage, getMyPage, patchMyPage };

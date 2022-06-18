@@ -11,15 +11,15 @@ const router = express.Router();
 router.get('/lobby', profileController.getAllUsers);
 
 // 상세페이지 조회
-router.get('/myPage/:userId', profileController.getMyPage);
+router.get('/page/:userId', profileController.getPage);
+
+// 내 페이지 조회
+router.get('/myPage', auth, profileController.getMyPage);
 
 // 상세페이지 수정
 router.patch(
-  '/myPage/:userId',
-  (res, req, next) => {
-    res.locals = { user: { userId: 1 } };
-    next();
-  },
+  '/myPage',
+  auth,
   upload.single('image'),
   profileController.patchMyPage
 );

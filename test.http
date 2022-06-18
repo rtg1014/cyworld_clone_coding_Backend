@@ -1,6 +1,23 @@
 ###
+GET http://localhost:3000/api/lobby
+
+###
+GET http://localhost:3000/api/page/2
+
+###
+GET http://localhost:3000/api/myPage
+
+###
+PATCH http://localhost:3000/api/myPage
+Content-Type: application/json
+
+{
+  "introMessage":"asdbasfsd"
+}
+
+###
 // 회원가입
-POST http://localhost:3000/api/signup
+POST http://localhost:3000/api/signUp
 Content-Type: application/json
 
 {
@@ -31,8 +48,6 @@ Content-Type: application/json
 //------------------------------------------------------------------------
 
 //------------------------------------------------------------------------
-
-
 
 
 ###

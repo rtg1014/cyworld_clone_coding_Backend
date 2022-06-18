@@ -14,11 +14,11 @@ router.get('/lobby', profileController.getAllUsers);
 router.get('/page/:userId', profileController.getPage);
 
 // 내 페이지 조회
-router.get('/myPage', auth, profileController.getMyPage);
+router.get('/mypage', auth, profileController.getMyPage);
 
 // 상세페이지 수정
 router.patch(
-  '/myPage',
+  '/mypage',
   auth,
   upload.single('image'),
   profileController.patchMyPage

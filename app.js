@@ -1,10 +1,14 @@
 const express = require('express');
 const port = 3000;
 const app = express();
+
 const db = require('./models');
-const Cors = require('cors');
-// const profileRouter = require('./routes/profile.route');
+
+const cors = require('cors');
+const profileRouter = require('./routes/profile.route');
+
 const userRouter = require('./routes/user.route');
+const errorMiddleware = require('./middlewares/error');
 
 db.sequelize
   .sync()
@@ -13,11 +17,13 @@ db.sequelize
   })
   .catch(console.error);
 
-app.use(express.urlencoded());
+app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(Cors());
-app.use('/', [userRouter]);
+app.use('/api', [profileRouter, userRouter]);
+
+app.use(errorMiddleware);
 
 app.listen(port, () => {
   console.log('🟢', port, '번 포트');

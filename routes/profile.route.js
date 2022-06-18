@@ -7,10 +7,13 @@ require('express-async-errors');
 
 const router = express.Router();
 
+// 메인페이지 조회
 router.get('/lobby', profileController.getAllUsers);
 
+// 상세페이지 조회
 router.get('/myPage/:userId', profileController.getMyPage);
 
+// 상세페이지 수정
 router.patch(
   '/myPage/:userId',
   (res, req, next) => {

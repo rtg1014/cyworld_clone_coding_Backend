@@ -5,10 +5,10 @@ GET http://localhost:3000/api/lobby
 GET http://localhost:3000/api/page/2
 
 ###
-GET http://localhost:3000/api/myPage
+GET http://localhost:3000/api/mypage
 
 ###
-PATCH http://localhost:3000/api/myPage
+PATCH http://localhost:3000/api/mypage
 Content-Type: application/json
 
 {

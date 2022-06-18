@@ -1,5 +1,5 @@
 const profileService = require('../services/profile.service');
-const { deleteImg } = require('../modules/multer');
+const { deleteImg } = require('../middlewares/multer');
 const throwError = require('../modules/throw_error');
 
 async function getAllUsers(req, res) {

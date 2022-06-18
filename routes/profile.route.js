@@ -1,6 +1,6 @@
 const express = require('express');
 const auth = require('../middlewares/auth-middelware');
-const { upload } = require('../modules/multer');
+const { upload } = require('../middlewares/multer');
 const profileController = require('../controllers/profile.controller');
 
 require('express-async-errors');

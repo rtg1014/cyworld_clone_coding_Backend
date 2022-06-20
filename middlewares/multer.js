@@ -1,8 +1,6 @@
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const aws = require('aws-sdk');
-const { Profile } = require('../models');
-const throwError = require('./throw_error');
 
 require('dotenv').config();
 
@@ -13,11 +11,6 @@ aws.config.update({
 });
 
 const s3 = new aws.S3();
-
-s3.deleteObject({
-  Bucket: process.env.S3_BUCKET,
-  Key: '1_1655470527422_62C10FB6-8F77-4F03-AA51-950CA1F29774.gif',
-});
 
 const upload = multer({
   storage: multerS3({
@@ -43,9 +36,9 @@ const deleteImg = async (fileName) => {
     await s3
       .deleteObject({ Bucket: process.env.S3_BUCKET, Key: fileName })
       .promise();
-    return { success: true, data: 'Image deleted Successfully' };
+    return { success: true, message: '이미지 삭제 성공' };
   } catch (error) {
-    return { success: false, data: null };
+    return { success: false, message: '이미지 삭제 실패' };
   }
 };
 

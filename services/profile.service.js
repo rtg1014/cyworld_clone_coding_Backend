@@ -8,9 +8,6 @@ const findUserOptions = {
 };
 
 async function findAllUsers() {
-  await User.create({ email: 'a@email.com', userName: 'Kim', password: '123' });
-  await Profile.create({ introMessage: '', imageUrl: '' });
-
   return await Profile.findAll(findUserOptions);
 }
 

@@ -13,6 +13,7 @@ const db = require('./models');
 const cors = require('cors');
 const profileRouter = require('./routes/profile.route');
 const userRouter = require('./routes/user.route');
+const streamRouter = require('./routes/stream.route');
 const errorMiddleware = require('./middlewares/error');
 
 db.sequelize
@@ -24,7 +25,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use('/api', [profileRouter, userRouter]);
+app.use('/api', [profileRouter, userRouter, streamRouter]);
 
 app.use(errorMiddleware);
 

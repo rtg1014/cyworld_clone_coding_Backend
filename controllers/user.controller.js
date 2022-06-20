@@ -13,14 +13,12 @@ exports.signUp = async (req, res) => {
       await Joimiddleware.validateAsync(req.body);
 
     const emailCheck = await Services.duplicates(email);
-    console.log(111, email);
     if (emailCheck) {
       return res.status(400).send({
         errorMessage: '이메일 중복검사 해주세요',
       });
     }
     let userCreate = await Services.signup(email, password, userName);
-    console.log(222, userCreate);
     if (!userCreate) {
       return res.status(200).send({
         Message: '회원가입 성공',

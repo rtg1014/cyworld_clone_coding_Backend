@@ -1,6 +1,7 @@
 const profileService = require('../services/profile.service');
 const { deleteImg } = require('../middlewares/multer');
 const throwError = require('../modules/throw_error');
+const logger = require('../modules/winston');
 
 async function getAllUsers(req, res) {
   // #swagger.tags = ['profile']
@@ -52,7 +53,7 @@ async function patchMyPage(req, res) {
   if (!result[0]) {
     throwError(404, 'Not Found');
   }
-
+  logger.info(`${userId} - 회원 정보 수정`);
   res.json({ introMessage, imageUrl });
 }
 

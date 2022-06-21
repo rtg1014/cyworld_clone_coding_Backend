@@ -1,12 +1,9 @@
-const profileService = require('../services/profile.service');
-const throwError = require('../modules/throw_error');
 const fs = require('fs');
-const url = require('url');
+const randomIdx = require('../modules/read_random_playlist');
 
 async function playMusic(req, res) {
   // #swagger.tags = ['profile']
-  const { pathname } = url.parse(req.url, true);
-  const filepath = `./static/${pathname.split('/')[2]}`;
+  const filepath = `./static/${playlists[randomIdx]}`;
 
   const stat = fs.statSync(filepath);
   const fileSize = stat.size;

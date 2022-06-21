@@ -8,25 +8,26 @@ GET http://localhost:3000/api/page/2
 GET http://localhost:3000/api/mypage
 
 ###
+POST http://3.39.161.93:3000/api/signup
+Content-Type: application/json
+
+{
+  "email":"ksh1@naver.com",
+  "password":"123123",
+  "confirmPassword": "123123",
+  "userName": "성현킴"
+}
+
+###
+//로컬 회원가입
 POST http://localhost:3000/api/signup
 Content-Type: application/json
 
 {
-  "email":"ksj1234@naver.com",
-  "password":"123123",
-  "confirmPassword": "123123",
-  "userName": "김성준1"
-}
-
-###
-POST http://3.38.151.80:3000/api/signup
-Content-Type: application/json
-
-{
-  "email":"ksj123@naver.com",
-  "password":"123123",
-  "confirmPassword": "123123",
-  "userName": "abc"
+  "email":"sh1014j123@naver.com",
+  "password":"tjdgus156",
+  "confirmPassword": "tjdgus156",
+  "userName": "김성현"
 }
 
 ###
@@ -35,13 +36,13 @@ POST http://3.39.161.93:3000/api/login
 Content-Type: application/json
 
 {
-    "email":"kkk@naver.com",
-    "password":"123456"
+    "email":"ksj123@naver.com",
+    "password":"1234"
 }
 
 ###
 // 이메일 중복검사
-GET http://3.39.161.93:3000/api/duplicateseEmail/nnn@naver.com
+GET http://localhost:3000/api/duplicatesEmail/ksfj123@naver.com
 Content-Type: application/json
 
 

@@ -27,7 +27,7 @@ const UsersSchema = Joi.object({
       'string.min': '6글자 ~ 12글자 이내로 작성해주세요',
       'string.max': '6글자 ~ 12글자 이내로 작성해주세요',
       'string.empty': '패스워드를 입력해주세요',
-      'string.pattern.base': '숫자,알파벳 대소문자로 입력해주세요',
+      'string.pattern.base': '비밀번호는 숫자,알파벳 대소문자로 입력해주세요',
     }),
   confirmPassword: Joi.string().valid(Joi.ref('password')).required().messages({
     'any.only': '비밀번호가 일치하지 않습니다.',

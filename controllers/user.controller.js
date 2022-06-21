@@ -78,29 +78,51 @@ exports.login = async (req, res, next) => {
 };
 
 // // 중복검사 이메일
+// exports.duplicates = async (req, res, next) => {
+//   try {
+//     const { email } = req.params;
+//     const overlapEmail = await Services.duplicates(email);
+//     console.log(email);
+//     console.log(overlapEmail);
+//     if (overlapEmail) {
+//       res.status(400).send({
+//         success: false,
+//         Message: '이메일 중복입니다.',
+//       });
+//       return;
+//     } else {
+//       res.status(200).send({
+//         success: false,
+//         Message: '사용 가능한 이메일 입니다',
+//       });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.status(401).send({
+//       success: false,
+//       Message: '잘못된 이메일 요청입니다.',
+//     });
+//   }
+// };
+
+// // 중복검사 이메일
 exports.duplicates = async (req, res, next) => {
   try {
     const { email } = req.params;
     const overlapEmail = await Services.duplicates(email);
-    console.log(email);
-    console.log(overlapEmail);
     if (overlapEmail) {
-      res.status(400).send({
-        success: false,
-        Message: '이메일 중복입니다.',
-      });
+      res.status(400).json({ success: false, Message: '이메일 중복입니다.' });
       return;
     } else {
-      res.status(200).send({
-        success: false,
-        Message: '사용 가능한 이메일 입니다',
-      });
+      console.log(2);
+      res
+        .status(200)
+        .json({ success: false, Message: '사용 가능한 이메일 입니다' });
     }
   } catch (err) {
     console.log(err);
-    res.status(401).send({
-      success: false,
-      Message: '잘못된 이메일 요청입니다.',
-    });
+    res
+      .status(401)
+      .json({ success: false, Message: '잘못된 이메일 요청입니다.' });
   }
 };

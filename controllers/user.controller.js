@@ -71,6 +71,7 @@ exports.login = async (req, res, next) => {
   } catch (err) {
     console.log(err);
     res.status(401).send({
+      msg: err.message,
       errorMessage: '로그인이 실패하였습니다.',
     });
   }

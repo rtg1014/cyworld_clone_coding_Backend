@@ -10,6 +10,6 @@ router.post('/signUp', loging, userController.signUp);
 router.post('/login', loging, userController.login);
 
 // 중복검사 이메일
-router.get('/duplicateseEmail/:email', userController.duplicates);
+router.get('/duplicatesEmail/:email', userController.duplicates);
 
 module.exports = router;

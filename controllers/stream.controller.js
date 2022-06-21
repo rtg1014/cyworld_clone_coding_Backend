@@ -1,9 +1,9 @@
 const fs = require('fs');
-const randomIdx = require('../modules/read_random_playlist');
+const randomPlaylist = require('../modules/read_random_playlist');
 
 async function playMusic(req, res) {
   // #swagger.tags = ['profile']
-  const filepath = `./static/${playlists[randomIdx]}`;
+  const filepath = `./static/${randomPlaylist}`;
 
   const stat = fs.statSync(filepath);
   const fileSize = stat.size;

@@ -6,4 +6,4 @@ const arr = fs.readdirSync(folder);
 const num = arr.length;
 const randomIdx = Math.floor(Math.random() * num);
 
-module.exports = randomIdx;
+module.exports = arr[randomIdx];

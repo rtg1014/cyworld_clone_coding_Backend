@@ -27,6 +27,7 @@ exports.signUp = async (req, res) => {
   } catch (err) {
     console.log(err);
     res.status(401).send({
+      msg: err.message,
       errorMessage: '회원가입 실패',
     });
   }

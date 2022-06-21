@@ -22,6 +22,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       introMessage: DataTypes.STRING,
       imageUrl: DataTypes.STRING,
+      playlist: DataTypes.STRING,
     },
     {
       sequelize,

@@ -14,6 +14,9 @@ module.exports = {
       imageUrl: {
         type: Sequelize.STRING,
       },
+      playlist: {
+        type: Sequelize.STRING,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -2,7 +2,7 @@ const { User, Profile } = require('../models');
 const Bcrypt = require('bcrypt');
 
 // 회원가입
-exports.signup = async (email, password, userName) => {
+exports.signup = async (email, password, userName, playlist) => {
   const salt = await Bcrypt.genSalt();
   const pwhash = await Bcrypt.hash(password, salt);
 
@@ -11,7 +11,7 @@ exports.signup = async (email, password, userName) => {
     password: pwhash,
     userName,
   });
-  await Profile.create({ introMessage: '', imageUrl: '' });
+  await Profile.create({ introMessage: '', imageUrl: '', playlist });
 };
 
 // 로그인

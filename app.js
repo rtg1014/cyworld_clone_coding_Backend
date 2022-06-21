@@ -11,6 +11,7 @@ require('./modules/socket');
 const db = require('./models');
 
 const cors = require('cors');
+const cookieParser = require('cookie-parser');
 const profileRouter = require('./routes/profile.route');
 const userRouter = require('./routes/user.route');
 const streamRouter = require('./routes/stream.route');
@@ -24,6 +25,7 @@ db.sequelize
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 app.use('/api', [profileRouter, userRouter, streamRouter]);
 

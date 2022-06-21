@@ -1,6 +1,7 @@
 const multer = require('multer');
 const multerS3 = require('multer-s3');
 const aws = require('aws-sdk');
+const fs = require('fs');
 
 require('dotenv').config();
 
@@ -42,4 +43,15 @@ const deleteImg = async (fileName) => {
   }
 };
 
-module.exports = { upload, deleteImg };
+const download = async (filename) => {
+  const { Body } = await s3
+    .getObject({
+      Key: filename,
+      Bucket: process.env.S3_BUCKET,
+    })
+    .promise();
+
+  fs.writeFileSync('./static/' + filename, Body);
+};
+
+module.exports = { upload, deleteImg, download };

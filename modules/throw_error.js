@@ -1,7 +1,7 @@
-// const logger = require('../functions/winston');
+const logger = require('../modules/winston');
 
-function throwError(status, message) {
-  // logger.error(message);
+function throwError(status, message, userId = null) {
+  logger.error(`${userId} - ${message}`);
 
   const error = new Error(message);
 

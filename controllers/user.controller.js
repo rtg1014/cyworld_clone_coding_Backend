@@ -11,6 +11,7 @@ exports.signUp = async (req, res) => {
   try {
     const { email, password, confirmPassword, userName } =
       await Joimiddleware.validateAsync(req.body);
+    const { playlist } = res.locals;
 
     const emailCheck = await Services.duplicates(email);
     if (emailCheck) {
@@ -18,7 +19,7 @@ exports.signUp = async (req, res) => {
         errorMessage: '이메일 중복검사 해주세요',
       });
     }
-    let userCreate = await Services.signup(email, password, userName);
+    let userCreate = await Services.signup(email, password, userName, playlist);
     if (!userCreate) {
       return res.status(200).send({
         Message: '회원가입 성공',

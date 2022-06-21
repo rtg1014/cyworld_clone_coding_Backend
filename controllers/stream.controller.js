@@ -1,12 +1,14 @@
-const profileService = require('../services/profile.service');
-const throwError = require('../modules/throw_error');
 const fs = require('fs');
-const url = require('url');
 
 async function playMusic(req, res) {
-  // #swagger.tags = ['profile']
-  const { pathname } = url.parse(req.url, true);
-  const filepath = `./static/${pathname.split('/')[2]}`;
+  // #swagger.tags = ['stream']
+  const { playlist } = req.params;
+
+  if (!playlist) {
+    throwError(404, 'Not Found');
+  }
+
+  const filepath = `./static/${playlist}`;
 
   const stat = fs.statSync(filepath);
   const fileSize = stat.size;

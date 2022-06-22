@@ -116,10 +116,9 @@ exports.duplicates = async (req, res, next) => {
       res.status(400).json({ success: false, Message: '이메일 중복입니다.' });
       return;
     } else {
-      console.log(2);
       res
         .status(200)
-        .json({ success: false, Message: '사용 가능한 이메일 입니다' });
+        .json({ success: true, Message: '사용 가능한 이메일 입니다' });
     }
   } catch (err) {
     console.log(err);

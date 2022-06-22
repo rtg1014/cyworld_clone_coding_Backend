@@ -36,7 +36,7 @@ async function getMyPage(req, res) {
 
 async function patchMyPage(req, res) {
   // #swagger.tags = ['profile']
-  const { userId } = req.locals.user;
+  const { userId } = res.locals.user;
   const { introMessage } = req.body;
   const user = await profileService.findUser(userId);
 

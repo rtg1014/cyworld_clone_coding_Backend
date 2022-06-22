@@ -20,14 +20,13 @@ const upload = multer({
     acl: 'public-read',
     contentType: multerS3.AUTO_CONTENT_TYPE,
     key: async function (req, file, cb) {
-      const { userId } = req.locals.user;
       const ext = file.originalname.split('.')[1];
 
       if (!['png', 'jpg', 'jpeg', 'gif', 'bmp', 'ico'].includes(ext)) {
         return cb(new Error('이미지 파일 확장자만 업로드 가능'));
       }
 
-      cb(null, `user_${userId}_${Date.now()}.${ext}`);
+      cb(null, `${Date.now()}.${ext}`);
     },
   }),
 });

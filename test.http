@@ -1,6 +1,8 @@
 ###
 GET http://localhost:3000/api/lobby
 
+http://3.39.161.93:3000/api/login
+
 ###
 GET http://localhost:3000/api/page/2
 
@@ -18,6 +20,9 @@ Content-Type: application/json
   "userName": "성현킴"
 }
 
+
+
+
 ###
 //로컬 회원가입
 POST http://localhost:3000/api/signup
@@ -32,17 +37,26 @@ Content-Type: application/json
 
 ###
 // 로그인
-POST http://3.39.161.93:3000/api/login
+POST http://localhost:3000/api/login
 Content-Type: application/json
 
 {
-    "email":"ksj123@naver.com",
-    "password":"1234"
+    "email":"shshs1010@naver.com",
+    "password":"123123"
 }
 
 ###
+/// 이메일로 비밀번호 찾기
+POST http://localhost:3000/api/send/pw
+Content-Type: application/json
+
+
+
+
+
+###
 // 이메일 중복검사
-GET http://localhost:3000/api/duplicatesEmail/ksfj123@naver.com
+GET http://localhost:3000/api/duplicatesEmail/shshs1010@naver.com
 Content-Type: application/json
 
 

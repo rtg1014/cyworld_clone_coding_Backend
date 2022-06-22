@@ -13,6 +13,7 @@ const db = require('./models');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
 const profileRouter = require('./routes/profile.route');
+const passwordRouter = require('./routes/password.route');
 const userRouter = require('./routes/user.route');
 const streamRouter = require('./routes/stream.route');
 const errorMiddleware = require('./middlewares/error');
@@ -27,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
-app.use('/api', [profileRouter, userRouter, streamRouter]);
+app.use('/api', [profileRouter, userRouter, streamRouter, passwordRouter]);
 
 app.use(errorMiddleware);
 

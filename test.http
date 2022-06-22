@@ -24,10 +24,10 @@ POST http://localhost:3000/api/signup
 Content-Type: application/json
 
 {
-  "email":"sh1014j123@naver.com",
-  "password":"tjdgus156",
-  "confirmPassword": "tjdgus156",
-  "userName": "김성현"
+  "email":"shshs1010@naver.com",
+  "password":"123123",
+  "confirmPassword": "123123",
+  "userName": "성현킴"
 }
 
 ###

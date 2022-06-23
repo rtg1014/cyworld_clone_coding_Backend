@@ -1,6 +1,5 @@
 const socketIo = require('socket.io');
 const http = require('../app');
-const { data } = require('./winston');
 const io = socketIo(http, { cors: { origin: '*' } });
 
 const checkCounts = (room) => io.sockets.adapter.rooms.get(room)?.size || 0;
@@ -51,7 +50,7 @@ module.exports = io.on('connection', function (socket) {
 
     io.to(room).emit('update', {
       type: 'disconnect',
-      name: name,
+      name,
       count: checkCounts(room),
     });
     console.log(`${name}님이 나갔습니다. (총 ${checkCounts(room)}명)`);

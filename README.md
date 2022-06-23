@@ -44,12 +44,10 @@
 📌 BackEnd
 
 <img src="https://img.shields.io/badge/javascript-333333?style=flat-square&logo=javascript&logoColor=yellow"/> <img src="https://img.shields.io/badge/mysql-3333ff?style=flat-square&logo=firebase&logoColor=white"/> 
-<img src="https://img.shields.io/badge/express-666666?style=flat-square&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-33cc00?style=flat-square&logo=Node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/express-666666?style=flat-square&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-ffcc33?style=flat-square&logo=AWS&logoColor=white"/> 
 
 
-<img src="https://img.shields.io/badge/NPM-33cc00?style=flat-square&logo=NPM.js&logoColor=red"/> <img src="https://img.shields.io/badge/JSON WEB TOKEN-333333?style=flat-square&logo=json web token&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-ffcc33?style=flat-square&logo=AWS&logoColor=white"/> <img src="https://img.shields.io/badge/passport-00cc66?style=flat-square&logo=passport&logoColor=white"/> 
-
-<img src="https://img.shields.io/badge/Socket.io-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/winston-33ccff?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/multer-cc0033?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/sequelize-ffff33?style=flat-square&logo=Node.js&logoColor=black"/>
+<img src="https://img.shields.io/badge/jsonwebtoken-333333?style=flat-square&logo=json web token&logoColor=white"/> <img src="https://img.shields.io/badge/Socket.io-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/winston-33ccff?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/multer-cc0033?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/sequelize-ffff33?style=flat-square&logo=Node.js&logoColor=black"/>
 
 
 
@@ -97,13 +95,13 @@ API 명세서
 
 2. 해싱을 사용해서 사용자의 비밀번호가 DB에 암호화되서 저장되게끔 구현
 
-3. .env로 환경변수 설정해서 중요한 키값을 환경변수로 처리하여 다른사람이 보지못하게 구현. 
+3. dotenv로 환경변수 설정해서 중요한 키값을 환경변수로 처리하여 다른사람이 보지못하게 구현. 
 
-4. DB 를 기존에 사용하던 mongodb 가 아닌 MY SQL 을 사용 
+4. DB를 기존에 사용하던 mongodb 가 아닌 MYSQL 을 사용 
 
-5. MY SQL 을 사용할 때 다른 테이블의 키값을 가져오기 위해서 외래키를 사용
+5. MYSQL 을 사용할 때 다른 테이블의 키값을 가져오기 위해서 외래키를 사용
 
-6. 비밀번호 찾기 기능을 구현하기 위해서 Nodemailer 를 사용
+6. 비밀번호 찾기 기능을 구현하기 위해서 nodemailer 를 사용
 
 7. 채팅 기능을 구현하기 위해 socket.io를 사용
 
@@ -115,12 +113,9 @@ API 명세서
 
 😥 BE: 개발하면서 어려웠던점
 1. Stream 방식의 데이터 전송이나 웹소켓을 활용한 실시간 통신이 기존에 CRUD에서 사용한 통신 방식과 달라 그 부분을 이해하는데 시간이 많이 소요됨
-2. 
 
 🤟 Trouble Shooting
 (우리 팀이 해결한 문제 정리)
 
 1. socket.io의 room 기능을 활용해 데이터 분산
 2. stream 방식으로 오디오 파일을 전송해 서버 과부화 해결
-3. 
-

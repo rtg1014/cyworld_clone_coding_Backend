@@ -47,7 +47,9 @@
 <img src="https://img.shields.io/badge/express-666666?style=flat-square&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/Node.js-33cc00?style=flat-square&logo=Node.js&logoColor=white"/>
 
 
-<img src="https://img.shields.io/badge/NPM-33cc00?style=flat-square&logo=NPM.js&logoColor=red"/> <img src="https://img.shields.io/badge/JSON WEB TOKEN-333333?style=flat-square&logo=json web token&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-ffcc33?style=flat-square&logo=AWS&logoColor=white"/> <img src="https://img.shields.io/badge/passport-00cc66?style=flat-square&logo=passport&logoColor=white"/> <img src="https://img.shields.io/badge/Socket.io-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/winston-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/multer-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/sequelize-33cc00?style=flat-square&logo=Node.js&logoColor=white"/>
+<img src="https://img.shields.io/badge/NPM-33cc00?style=flat-square&logo=NPM.js&logoColor=red"/> <img src="https://img.shields.io/badge/JSON WEB TOKEN-333333?style=flat-square&logo=json web token&logoColor=white"/> <img src="https://img.shields.io/badge/AWS-ffcc33?style=flat-square&logo=AWS&logoColor=white"/> <img src="https://img.shields.io/badge/passport-00cc66?style=flat-square&logo=passport&logoColor=white"/> 
+
+<img src="https://img.shields.io/badge/Socket.io-33cc00?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/winston-33ccff?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/multer-cc0033?style=flat-square&logo=Node.js&logoColor=white"/> <img src="https://img.shields.io/badge/sequelize-ffff33?style=flat-square&logo=Node.js&logoColor=black"/>
 
 
 
